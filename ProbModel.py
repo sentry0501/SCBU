@@ -10,7 +10,7 @@ class ProbModel:
         self.MAX_BG_AGE = 30 #15
         self.VAR_DEC_RATIO = 0.1
         self.VAR_MIN_NOISE_T = 50.0*50.0
-        self.T_high = 3.5
+        self.T_high = 2.25
         self.T_low = 2
         self.INIT_BG_VAR = 20.0*20.0
         self.MIN_BG_VAR = 5 * 5
@@ -163,9 +163,9 @@ class ProbModel:
         print("tempMeanS", tempMean[2,45])
         tempAges[self.J[condSelf], self.I[condSelf]] += W_self[self.J[condSelf], self.I[condSelf]] * A[idxNewJ[condSelf], idxNewI[condSelf]]
         W[self.J[condSelf], self.I[condSelf]] += W_self[self.J[condSelf], self.I[condSelf]]
-        print("time compensate",time.time()-t_motin)
-        print("pre temp mean",self.temp_means[2,45], W[2,45],tempMean[2,45])
-        print("pre index",idxNewI.reshape((60,80))[2,45],idxNewJ.reshape((60,80))[2,45],NewI_H.reshape((60,80))[2,45],NewJ_V.reshape((60,80))[2,45])
+        # print("time compensate",time.time()-t_motin)
+        # print("pre temp mean",self.temp_means[2,45], W[2,45],tempMean[2,45])
+        # print("pre index",idxNewI.reshape((60,80))[2,45],idxNewJ.reshape((60,80))[2,45],NewI_H.reshape((60,80))[2,45],NewJ_V.reshape((60,80))[2,45])
 
 
         # print("pre mean", M[idxNewJ[condH][630], NewI_H[condH][630]])
@@ -181,7 +181,7 @@ class ProbModel:
         # print("pre W", W_HV[self.J[condHV][630], self.I[condHV][630]])
         # print("pre W", W_self[self.J[condSelf][630], self.I[condSelf][630]])
 
-        print("new XY", NewX.reshape((60,80))[2,45], NewY.reshape((60,80))[2,45])
+        # print("new XY", NewX.reshape((60,80))[2,45], NewY.reshape((60,80))[2,45])
         print("gray",gray[8:12,184:188])
         print("gray",gray[12:16,180:184])
         print("gray",gray[12:16,184:188])
